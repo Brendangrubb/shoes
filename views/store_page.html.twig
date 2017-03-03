@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{app.request.getbaseurl}}/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{{app.request.getbaseurl}}/assets/css/styles.css">
+        <title>Shoe Store and Brand Associations</title>
+    </head>
+    <body>
+        <div class="container">
+
+            <header>
+                <h1>Shoe Stores and Brands!</h1>
+            </header>
+
+                <h4>{{store.getName}} carries the following brands:</h4>
+
+                {% for store_brand in store_brands %}
+                    <h4>{{ store_brand.getName }}</h4>
+                {% endfor %}
+                
+                <br><br>
+                <div id="go_home">
+                    <form action="/" method="get">
+                        <button class="btn btn-xs" type="submit">Go Home</button>
+                    </form>
+                </div>
+        </div>
+    </body>
+</html>

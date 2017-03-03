@@ -53,5 +53,32 @@
         return $app->redirect('/');
     });
 
+    $app->post('/store_page', function() use ($app) {  // ADD A STORE TO DB, REDIRECTS HOME
+
+        return $app['twig']->render('store_page.html.twig');
+    });
+
+    $app->post('/brand_page', function() use ($app) {  // ADD A BRAND TO DB, REDIRECTS HOME
+
+
+        return $app['twig']->render('brand_page.html.twig');
+    });
+    
+    $app->get('/edit/{id}', function($id) use ($app) {
+        $store = Store::find($id);
+        $brand = Brand::getAll();
+        $store_brands = $store->getBrands();
+
+        return $app['twig']->render('store_page.html.twig', array('store' => $store, 'brand' => $brand, 'store_brands' => $store_brands));
+    });
+
+    $app->get('/edit/{id}', function($id) use ($app) {
+        $brand = Brand::find($id);
+        $store = Store::getAll();
+        $brand_stores = $brand->getStores();
+
+        return $app['twig']->render('brand_page.html.twig', array('brand' => $brand, 'store' => $store, 'brand_stores' => $brand_stores));
+    });
+
     return $app;
 ?>
