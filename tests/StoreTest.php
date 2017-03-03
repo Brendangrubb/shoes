@@ -149,8 +149,7 @@
             $new_store2->save();
 
             // Act
-            $id = $new_store2->getId();
-            Store::delete($id);
+            $new_store2->delete();
             $result = Store::getAll();
 
             // Assert
