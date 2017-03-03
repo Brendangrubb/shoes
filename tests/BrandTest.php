@@ -49,7 +49,7 @@
             $this->assertEquals($new_name, $result);
         }
 
-        function getId()
+        function test_getId()
         {
             // Arrange
             $name = "Nike";

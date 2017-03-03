@@ -32,7 +32,6 @@
 
             // Assert
             $this->assertEquals($name, $result);
-
         }
 
         function test_setName()
@@ -48,7 +47,6 @@
 
             // Assert
             $this->assertEquals($new_name, $result);
-
         }
 
         function test_getId()
@@ -63,7 +61,6 @@
 
             // Assert
             $this->assertEquals($id, $result);
-
         }
 
     // TEST C R U D
