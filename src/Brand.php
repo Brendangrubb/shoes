@@ -13,6 +13,7 @@
     // GETTERS AND SETTERS
         function getName()
         {
+            return $this->name;
         }
 
 
