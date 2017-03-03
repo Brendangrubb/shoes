@@ -1,3 +1,9 @@
 body {
-    background-color: yellow;
+    background-color: #D3D3D3;
+}
+
+header {
+    background-color: #e5c1c1;
+    padding: 20px;
+    margin: 20px;
 }

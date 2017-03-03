@@ -12,10 +12,60 @@
                 <h1>Shoe Stores and Brands!</h1>
             </header>
 
-            <div class="jumbotron">
-                <p>linked</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <form method="post" action="/add_store">
+                        <label><strong>Enter a Shoe Store</strong></label><br>
+                        <div class="form-group">
+                            <input id="name" type="text" name="name" class="form-control" placeholder="ex. Shoe Mill" required>
+                        </div>
+                        <div id="add_book">
+                            <button type="sumbit" class="btn btn-success btn-sm">Add Store</button><br><br>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-6">
+                    <form method="post" action="/add_brand">
+                        <label><strong>Enter a Shoe Brand</strong></label><br>
+                        <div class="form-group">
+                            <input id="name" type="text" name="name" class="form-control" placeholder="ex. Pumas" required>
+                        </div>
+                        <div id="add_book">
+                            <button type="sumbit" class="btn btn-success btn-sm">Add Brand</button><br><br>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <a href="/test">go to test</a>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label><strong>List of Stores in Database</strong></label>
+
+                    {% if stores is not empty %}
+                    {% for store in stores %}
+                    <ul>
+                        <li>{{ store.getName }}</li>
+
+                    </ul>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>List of Brands in Database</strong></label>
+
+                    {% if brands is not empty %}
+                    {% for brand in brands %}
+                    <ul>
+                        <li>{{ brand.getName }}</li>
+
+                    </ul>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+
         </div>
     </body>
 </html>
