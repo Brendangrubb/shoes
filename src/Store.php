@@ -49,9 +49,9 @@
             return $stores;
         }
 
-        static function delelteAll()
+        static function deleteAll()
         {
-
+            $GLOBALS['DB']->exec("DELETE FROM stores;");
         }
 
 
