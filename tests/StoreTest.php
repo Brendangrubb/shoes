@@ -36,7 +36,8 @@
             $new_name = "Shoe Mill East";
 
             // Act
-            $result = $new_store->setName($new_name);
+            $new_store->setName($new_name);
+            $result = $new_store->getName();
 
             // Assert
             $this->assertEquals($new_name, $result);
