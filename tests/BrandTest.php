@@ -43,10 +43,21 @@
 
                 // Assert
                 $this->assertEquals($new_name, $result);
-
             }
 
+            function getId()
+            {
+                // Arrange
+                $name = "Nike";
+                $id = 1;
+                $brand = new Brand($name, $id);
 
+                // Act
+                $result = $brand->getId();
+
+                // Assert
+                $this->assertEquals($id, $result);
+            }
 
 
 
