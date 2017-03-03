@@ -30,6 +30,21 @@
                 $this->assertEquals($name, $result);
             }
 
+            function test_setName()
+            {
+                // Arrange
+                $name = "Nike";
+                $new_brand = new Brand($name);
+                $new_name = "SuperNike";
+
+                // Act
+                $new_brand->setName($new_name);
+                $result = $new_brand->getName();
+
+                // Assert
+                $this->assertEquals($new_name, $result);
+
+            }
 
 
 
