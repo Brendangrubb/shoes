@@ -62,19 +62,19 @@
         }
 
     // TEST C R U D
-        // function test_save()
-        // {
-        //     // Arrange
-        //     $name = "Shoe Mill";
-        //     $new_store = new Store($name);
-        //     $new_store->save();
-        //
-        //     // Act
-        //     $result = Store::getAll();
-        //
-        //     // Assert
-        //     $this->assertEquals($new_store, $result[0]);
-        // }
+        function test_save()
+        {
+            // Arrange
+            $name = "Shoe Mill";
+            $new_store = new Store($name);
+            $new_store->save();
+
+            // Act
+            $result = Store::getAll();
+
+            // Assert
+            $this->assertEquals($new_store, $result[0]);
+        }
 
         function test_getAll()
         {
@@ -94,7 +94,24 @@
             $this->assertEquals([$new_store, $new_store2], $result);
         }
 
+        function test_deleteAll()
+        {
+            // Arrange
+            $name = "Shoe Mill";
+            $new_store = new Store($name);
+            $new_store->save();
 
+            $name2 = "Foot Traffic";
+            $new_store2 = new Store($name2);
+            $new_store2->save();
+
+            // Act
+            Store::deleteAll();
+            $result = Store::getAll();
+
+            // Assert
+            $this->assertEquals([], $result);
+        }
 
     }
 

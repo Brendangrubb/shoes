@@ -49,6 +49,11 @@
             return $stores;
         }
 
+        static function delelteAll()
+        {
+
+        }
+
 
     }
 ?>
