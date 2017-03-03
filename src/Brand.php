@@ -53,7 +53,10 @@
             $GLOBALS['DB']->exec("DELETE FROM brands;");
         }
 
+        static function find($id)
+        {
 
+        }
 
 
 
