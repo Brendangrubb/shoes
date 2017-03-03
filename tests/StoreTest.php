@@ -27,6 +27,28 @@
             $this->assertEquals($name, $result);
 
         }
+
+        function test_setName()
+        {
+            // Arrange
+            $name = "Shoe Mill";
+            $new_store = new Store($name);
+            $new_name = "Shoe Mill East";
+
+            // Act
+            $result = $new_store->setName($new_name);
+
+            // Assert
+            $this->assertEquals($new_name, $result);
+
+        }
+
+
+
+
+
+
+
     }
 
 ?>
