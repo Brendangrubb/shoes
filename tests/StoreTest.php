@@ -44,6 +44,20 @@
 
         }
 
+        function test_getId()
+        {
+            // Arrange
+            $name = "Shoe Mill";
+            $id = 1;
+            $new_store = new Store($name, $id);
+
+            // Act
+            $result = $new_store->getId();
+
+            // Assert
+            $this->assertEquals($id, $result);
+
+        }
 
 
 
