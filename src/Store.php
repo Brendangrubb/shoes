@@ -43,7 +43,7 @@
                 $id = $store['id'];
                 $new_store = new Store($name, $id);
                 array_push($stores, $new_store);
-            }            
+            }
             return $stores;
         }
 
@@ -77,7 +77,16 @@
             $this->setName($new_name);
         }
 
+    // MANY TO MANY
+        function addBrand($brand_id)
+        {
 
 
+        }
+
+        function getBrands()
+        {
+
+        }
     }
 ?>
