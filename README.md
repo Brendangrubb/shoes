@@ -32,21 +32,21 @@ Shoes is an application created to demonstrate my ability to implement a many to
 
 &nbsp;
 ## MySQL commands
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
+* SHOW DATABASES / DROP DATABASE (old & redundant databases);
+* CREATE DATABASE shoes;
+* USE shoes;
+* SELECT DATABASE(); (to confirm I'm using the correct database)
+* CREATE TABLE stores (name VARCHAR(255), id serial PRIMARY KEY);
+* DESCRIBE stores; (to confirm the stores table was created correctly)
+* CREATE TABLE brands (name VARCHAR(255), id serial PRIMARY KEY);
+* DESCRIBE brands; (to confirm the brands table was created correctly)
+* CREATE TABLE stores_brands (store_id INT, brand_id INT, id serial PRIMARY KEY);
+* DESCRIBE stores_brands; (to confirm the join table was created correctly)
+* shoes_test created at http://localhost:8888/phpmyadmin/
+* SHOW DATABASES; (to confirm shoes_test was created correctly)
+* USE shoes_test;
+* SHOW TABLES; (to confirm that tables were copied into shoes_test properly)
+
 
 
 &nbsp;
