@@ -54,6 +54,16 @@
             $GLOBALS['DB']->exec("DELETE FROM stores;");
         }
 
+        static function find($id)
+        {
+
+        }
+
+
+
+
+
+
 
     }
 ?>
