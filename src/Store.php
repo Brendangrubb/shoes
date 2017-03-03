@@ -56,7 +56,16 @@
 
         static function find($id)
         {
+            $returned_stores = Store::getAll();
+            $found_store = null;
 
+            foreach ($returned_stores as $store) {
+                $store_id = $store->getId();
+                if ( $store_id == $id) {
+                    $found_store = $store;
+                }
+            }
+            return $found_store;
         }
 
 
