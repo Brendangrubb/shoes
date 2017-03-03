@@ -16,6 +16,21 @@
     {
 
 
+        // TEST GETTERS AND SETTERS
+            function test_getName()
+            {
+                // Arrange
+                $name = "Nike";
+                $new_brand = new Brand($name);
+
+                // Act
+                $result = $new_brand->getName();
+
+                // Assert
+                $this->assertEquals($name, $result);
+            }
+
+
 
 
 

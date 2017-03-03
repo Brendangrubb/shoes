@@ -10,6 +10,10 @@
             $this->id = $id;
         }
 
+    // GETTERS AND SETTERS
+        function getName()
+        {
+        }
 
 
 
