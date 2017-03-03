@@ -73,7 +73,10 @@
             $GLOBALS['DB']->exec("DELETE FROM stores WHERE id = {$this->getId()};");
         }
 
+        function update($new_name)
+        {
 
+        }
 
 
 

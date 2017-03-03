@@ -156,7 +156,25 @@
             $this->assertEquals([$new_store], $result);
         }
 
+        function test_update()
+        {
+            // Arrange
+            $name = "Shoe Mill";
+            $new_store = new Store($name);
+            $new_store->save();
 
+            $name2 = "Foot Traffic";
+            $new_store2 = new Store($name2);
+            $new_store2->save();
+
+            // Act
+            $new_name = "Shoe Mill East";
+            $new_store->update($new_name);
+            $result = $new_store->getName();
+
+            // Assert
+            $this->assertEquals($new_name, $result);
+        }
 
     }
 
