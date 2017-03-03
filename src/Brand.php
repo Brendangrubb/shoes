@@ -67,7 +67,16 @@
             return $found_brand;
         }
 
+    // MANY TO MANY
+        function addStore($store)
+        {
 
+        }
+
+        function getStores()
+        {
+
+        }
 
     }
 ?>

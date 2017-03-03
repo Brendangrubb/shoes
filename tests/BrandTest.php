@@ -6,6 +6,7 @@
     */
 
     require_once 'src/Brand.php';
+    require_once 'src/Store.php';
 
     $server = 'mysql:host=localhost:8889;dbname=shoes_test';
     $username = 'root';
@@ -18,6 +19,7 @@
         protected function teardown()
         {
             Brand::deleteAll();
+            Store::deleteAll();
         }
 
     // TEST GETTERS AND SETTERS
@@ -132,6 +134,26 @@
 
             // Assert
             $this->assertEquals($new_brand2, $result);
+        }
+
+    // TEST MANY TO MANY
+        function test_addStore()
+        {
+            // Arrange
+            $name = "Nike";
+            $new_brand = new Brand($name);
+            $new_brand->save();
+
+            $name = "Shoe Mill";
+            $new_store = new Store($name);
+            $new_store->save();
+
+            // Act
+            $new_brand->addStore($new_store);
+            $result = $new_brand->getStores();
+
+            // Assert
+            $this->assertEquals([$new_store], $result);
         }
 
 
