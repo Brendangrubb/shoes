@@ -7,3 +7,9 @@ header {
     padding: 20px;
     margin: 20px;
 }
+
+#delete_stores
+, #delete_brands {
+    margin-top: -53px;
+    float: right;
+    }

@@ -27,20 +27,31 @@
         return $app['twig']->render('index.html.twig', array('stores' => $stores, 'brands' => $brands));
     });
 
-    $app->post('/add_store', function() use ($app) {  // ADD A STORE TO DB REDIRECTS HOME
-        $new_store = new Store($_POST['name']);
+    $app->post('/add_store', function() use ($app) {  // ADD A STORE TO DB, REDIRECTS HOME
+        $new_store = new Store(filter_var($_POST['name']), FILTER_SANITIZE_MAGIC_QUOTES);
         $new_store->save();
 
         return $app->redirect('/');
     });
 
-    $app->post('/add_brand', function() use ($app) {  // ADD A BRAND TO DB REDIRECTS HOME
-        $new_brand = new Brand($_POST['name']);
+    $app->post('/add_brand', function() use ($app) {  // ADD A BRAND TO DB, REDIRECTS HOME
+        $new_brand = new Brand(filter_var($_POST['name']), FILTER_SANITIZE_MAGIC_QUOTES);
         $new_brand->save();
 
         return $app->redirect('/');
     });
 
+    $app->delete('/delete_stores', function() use ($app) {  // DELETES ALL STORES FROM DB, REDIRECTS HOME
+        Store::deleteAll();
+
+        return $app->redirect('/');
+    });
+
+    $app->delete('/delete_brands', function() use ($app) {  // DELETES ALL BRANDS FROM DB, REDIRECTS HOME
+        Brand::deleteAll();
+
+        return $app->redirect('/');
+    });
 
     return $app;
 ?>

@@ -23,6 +23,12 @@
                             <button type="sumbit" class="btn btn-success btn-sm">Add Store</button><br><br>
                         </div>
                     </form>
+                    <div id="delete_stores">
+                        <form action="/delete_stores" method="post" class="form-group">
+                            <input name="_method" type="hidden" value="delete">
+                            <button type="submit" class="btn btn-warning btn-sm">Delete All Stores</button>
+                        </form>
+                    </div>
                 </div>
 
                 <div class="col-md-6">
@@ -35,6 +41,12 @@
                             <button type="sumbit" class="btn btn-success btn-sm">Add Brand</button><br><br>
                         </div>
                     </form>
+                    <div id="delete_brands">
+                        <form action="/delete_brands" method="post" class="form-group">
+                            <input name="_method" type="hidden" value="delete">
+                            <button type="submit" class="btn btn-warning btn-sm">Delete All Brands</button>
+                        </form>
+                    </div>
                 </div>
             </div>
 
