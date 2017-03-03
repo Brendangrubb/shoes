@@ -10,6 +10,7 @@
             $this->id = $id;
         }
 
+    // GETTERS AND SETTERS
         function getName()
         {
             return $this->name;
@@ -25,9 +26,16 @@
             return $this->id;
         }
 
+    // C R U D
+        function save()
+        {
 
+        }
 
+        static function getAll()
+        {
 
+        }
 
 
     }

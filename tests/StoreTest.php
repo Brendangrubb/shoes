@@ -14,6 +14,8 @@
 
     class StoreTest extends PHPUnit_Framework_TestCase
     {
+
+        // TEST GETTERS AND SETTERS
         function test_getName()
         {
             // Arrange
@@ -59,6 +61,20 @@
 
         }
 
+    // TEST C R U D
+        function test_save()
+        {
+            // Arrange
+            $name = "Shoe Mill";
+            $new_store = new Store($name);
+            $new_store->save();
+
+            // Act
+            $result = Store::getAll();
+
+            // Assert
+            $this->assertEquals($new_store, $result[0]);
+        }
 
 
 
