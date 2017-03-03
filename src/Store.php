@@ -35,7 +35,7 @@
 
         static function getAll()
         {
-            $returned_stores = $GLOBALS['DB']->query("SELECT * FROM stores");
+            $returned_stores = $GLOBALS['DB']->query("SELECT * FROM stores;");
             $stores = array();
 
 
