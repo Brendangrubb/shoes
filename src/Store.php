@@ -22,7 +22,7 @@
 
         function getId()
         {
-            return $this->Id;
+            return $this->id;
         }
 
 
