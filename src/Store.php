@@ -69,6 +69,7 @@
         function delete()
         {
             $GLOBALS['DB']->exec("DELETE FROM stores WHERE id = {$this->getId()};");
+            $GLOBALS['DB']->exec("DELETE FROM stores_brands WHERE store_id = {$this->getId()};");
         }
 
         function update($new_name)
@@ -77,11 +78,10 @@
             $this->setName($new_name);
         }
 
-    // MANY TO MANY
+    // MANY TO MANY METHODS
         function addBrand($brand)
         {
             $GLOBALS['DB']->exec("INSERT INTO stores_brands (store_id, brand_id) VALUES ({$this->getId()}, {$brand->getId()});");
-
         }
 
         function getBrands()
@@ -99,7 +99,6 @@
                 $brand = new Brand($name, $id);
                 array_push($brands, $brand);
             }
-
             return $brands;
         }
     }

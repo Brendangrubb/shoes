@@ -67,11 +67,10 @@
             return $found_brand;
         }
 
-    // MANY TO MANY
+    // MANY TO MANY METHODS
         function addStore($store)
         {
             $GLOBALS['DB']->exec("INSERT INTO stores_brands (store_id, brand_id) VALUES ({$store->getId()}, {$this->getId()});");
-
         }
 
         function getStores()
@@ -89,9 +88,7 @@
                 $store = new Store($name, $id);
                 array_push($stores, $store);
             }
-
             return $stores;
         }
-
     }
 ?>

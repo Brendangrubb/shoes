@@ -136,7 +136,7 @@
             $this->assertEquals($new_brand2, $result);
         }
 
-    // TEST MANY TO MANY
+    // TEST MANY TO MANY METHODS
         function test_addStore()
         {
             // Arrange
@@ -179,8 +179,5 @@
             // Assert
             $this->assertEquals([$new_store, $new_store2], $result);
         }
-
-
-
     }
 ?>

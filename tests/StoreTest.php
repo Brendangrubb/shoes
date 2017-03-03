@@ -147,12 +147,17 @@
             $new_store2 = new Store($name2);
             $new_store2->save();
 
+            $name = "Nike";
+            $new_brand = new Brand($name);
+            $new_brand->save();
+
             // Act
-            $new_store2->delete();
-            $result = Store::getAll();
+            $new_store->addBrand($new_brand);
+            $new_store->delete();
+            $result = $new_brand->getStores();
 
             // Assert
-            $this->assertEquals([$new_store], $result);
+            $this->assertEquals([], $result);
         }
 
         function test_update()
@@ -175,7 +180,7 @@
             $this->assertEquals($new_name, $result);
         }
 
-    // TEST MANY TO MANY
+    // TEST MANY TO MANY METHODS
         function test_addBrand()
         {
             // Arrange
@@ -218,7 +223,5 @@
             // Assert
             $this->assertEquals([$new_brand, $new_brand2] , $result);
         }
-
     }
-
 ?>
