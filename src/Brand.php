@@ -55,7 +55,16 @@
 
         static function find($id)
         {
+            $returned_brands = Brand::getAll();
+            $found_brand = null;
 
+            foreach ($returned_brands as $brand) {
+                $brand_id = $brand->getId();
+                if ( $brand_id == $id) {
+                    $found_brand = $brand;
+                }
+            }
+            return $found_brand;
         }
 
 
