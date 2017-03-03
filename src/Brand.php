@@ -26,5 +26,25 @@
             return $this->id;
         }
 
+    // C R U D
+        function save()
+        {
+
+        }
+
+        static function getAll()
+        {
+
+        }
+
+        static function deleteAll()
+        {
+
+        }
+
+
+
+
+
     }
 ?>
