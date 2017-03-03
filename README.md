@@ -46,6 +46,8 @@ Shoes is an application created to demonstrate my ability to implement a many to
 * SHOW DATABASES; (to confirm shoes_test was created correctly)
 * USE shoes_test;
 * SHOW TABLES; (to confirm that tables were copied into shoes_test properly)
+*  DELETE FROM stores; (used during tests to clear DB before teardown was implemented)
+*  SELECT * FROM stores; (used during tests to verify stores table is empty)
 
 
 
