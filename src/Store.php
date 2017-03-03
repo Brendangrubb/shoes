@@ -68,7 +68,10 @@
             return $found_store;
         }
 
+        function delete()
+        {
 
+        }
 
 
 
