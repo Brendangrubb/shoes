@@ -59,20 +59,38 @@
             $this->assertEquals($id, $result);
         }
 
-        // TEST C R U D
-            function test_save()
-            {
-                // Arrange
-                $name = "Nike";
-                $new_brand = new Brand($name);
-                $new_brand->save();
+    // TEST C R U D
+        // function test_save()
+        // {
+        //     // Arrange
+        //     $name = "Nike";
+        //     $new_brand = new Brand($name);
+        //     $new_brand->save();
+        //
+        //     // Act
+        //     $result = Brand::getAll();
+        //
+        //     // Assert
+        //     $this->assertEquals($new_brand, $result[0]);
+        // }
 
-                // Act
-                $result = Brand::getAll();
+        function test_getAll()
+        {
+            // Arrange
+            $name = "Nike";
+            $new_brand = new Brand($name);
+            $new_brand->save();
 
-                // Assert
-                $this->assertEquals($new_brand, $result[0]);
-            }
+            $name2 = "Puma";
+            $new_brand2 = new Brand($name2);
+            $new_brand2->save();
+
+            // Act
+            $result = Brand::getAll();
+
+            // Assert
+            $this->assertEquals([$new_brand, $new_brand2], $result);
+        }
 
 
 
