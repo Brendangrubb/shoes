@@ -14,7 +14,11 @@
 
     class BrandTest extends PHPUnit_Framework_TestCase
     {
-
+    // TEARDOWN
+        protected function teardown()
+        {
+            Brand::deleteAll();
+        }
 
     // TEST GETTERS AND SETTERS
         function test_getName()
