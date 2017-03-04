@@ -11,6 +11,14 @@
             <header>
                 <h1>Shoe Stores and Brands!</h1>
             </header>
+
+            <h4><a href="/store/{{ store.getId }}/edit">Edit Store Info</a></h4>
+
+            <form action="/store/{{ store.getId }}" method="post">
+                <input name="_method" type="hidden" value="delete">
+                <button class="btn btn-sm"type="submit">Delete This Store</button>
+            </form>
+
             <form method="post" action="/store/{{ store.getId }}">
                 <input name="store_id" type="hidden" value="{{ store.getId }}">
 

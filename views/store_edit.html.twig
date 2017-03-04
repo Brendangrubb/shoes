@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{app.request.getbaseurl}}/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{{app.request.getbaseurl}}/assets/css/styles.css">
+        <title>Shoe Store and Brand Associations</title>
+    </head>
+    <body>
+        <div class="container">
+
+            <header>
+                <h1>Shoe Stores and Brands!</h1>
+            </header>
+
+            <h1>Update the {{ store.getName }} category </h1>
+
+                    <form action="/store/{{ store.getId }}" method="post">
+                        <input name="_method" type="hidden" value="patch">
+                        <div class="form-group">
+                            <label for="name">Enter a New Name for this Store</label>
+                            <input class="form-control" name="name" type="text" placeholder="replace {{ store.getName }} with a new name">
+                        </div>
+                        <div>
+                            <button class="btn" type="submit">Update Store Name</button>
+                        </div>
+                    </form>
+
+
+            <br><br>
+            <div id="go_home">
+                <form action="/" method="get">
+                    <button class="btn btn-xs" type="submit">Go Home</button>
+                </form>
+            </div>
+
+        </div>
+    </body>
+</html>

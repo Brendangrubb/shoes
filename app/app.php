@@ -95,6 +95,21 @@
         return $app->redirect("/store/" . $id);
     });
 
+
+    $app->get("/store/{id}/edit", function($id) use ($app) {
+        $store = Store::find($id);
+
+        return $app['twig']->render('store_edit.html.twig', array('store' => $store));
+    });
+
+    $app->patch("/store/{id}", function($id) use ($app) {
+        $new_name = $_POST['name'];
+        $store = Store::find($id);
+        $store->update($new_name);
+
+        return $app->redirect("/store/" . $id);
+    });
+
     $app->post("/brand/{id}", function($id) use ($app) { // ADD STORE TO BRAND AND REDIRECT TO BRAND PAGE
         $brand = Brand::find($id);
         $brand->addStore($_POST['store_id']);
