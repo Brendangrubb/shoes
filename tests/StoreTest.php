@@ -152,7 +152,7 @@
             $new_brand->save();
 
             // Act
-            $new_store->addBrand($new_brand);
+            $new_store->addBrand($new_brand->getId());
             $new_store->delete();
             $result = $new_brand->getStores();
 
@@ -180,7 +180,7 @@
             $this->assertEquals($new_name, $result);
         }
 
-    // TEST MANY TO MANY METHODS
+    // // TEST MANY TO MANY METHODS
         function test_addBrand()
         {
             // Arrange
@@ -193,7 +193,7 @@
             $new_brand->save();
 
             // Act
-            $new_store->addBrand($new_brand);
+            $new_store->addBrand($new_brand->getId());
             $result = $new_store->getBrands();
 
             // Assert
@@ -216,8 +216,8 @@
             $new_brand2->save();
 
             // Act
-            $new_store->addBrand($new_brand);
-            $new_store->addBrand($new_brand2);
+            $new_store->addBrand($new_brand->getId());
+            $new_store->addBrand($new_brand2->getId());
             $result = $new_store->getBrands();
 
             // Assert

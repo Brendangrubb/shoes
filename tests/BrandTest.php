@@ -149,7 +149,7 @@
             $new_store->save();
 
             // Act
-            $new_brand->addStore($new_store);
+            $new_brand->addStore($new_store->getId());
             $result = $new_brand->getStores();
 
             // Assert
@@ -172,8 +172,8 @@
             $new_store2->save();
 
             // Act
-            $new_brand->addStore($new_store);
-            $new_brand->addStore($new_store2);
+            $new_brand->addStore($new_store->getId());
+            $new_brand->addStore($new_store2->getId());
             $result = $new_brand->getStores();
 
             // Assert
