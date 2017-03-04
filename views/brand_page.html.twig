@@ -19,13 +19,12 @@
 
                         <div class="form-group">
                             <label><strong>Add a store that sells {{ brand.getName }}</strong></label><br>
-
                             <select name='store_id'>
                                 {% for store in stores %}
                                 <option value="{{ store.getId }}">{{ store.getName }}</option>
                                 {% endfor %}
-                            </select><br><br>
-
+                            </select>
+                            <br><br>
                             <button type="submit" class="btn btn-sm btn-success">Add Store to {{ brand.getName }}</button>
                         </div>
                     </form>
@@ -40,6 +39,7 @@
                     {% endif%}
                 </div>
             </div>
+            
             <div class="row">
                 <form action="/" method="get" id="go_home">
                     <button class="btn btn-success" type="submit">Go Home</button>

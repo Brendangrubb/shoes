@@ -11,10 +11,12 @@
             <header>
                 <h1>Shoe Stores and Brands!</h1>
             </header>
+
             <div id="delete_store" class="row">
                 <div class="col-md-12">
                     <form action="/store/{{ store.getId }}" method="post">
                         <input name="_method" type="hidden" value="delete">
+
                         <button class="btn btn-sm btn-danger"type="submit">Delete This Store</button>
                     </form>
                     <h3><a href="/store/{{ store.getId }}/edit">Edit Store Info</a></h3>
@@ -28,20 +30,18 @@
 
                         <div class="form-group">
                             <label><strong>Enter a Brand Sold at {{ store.getName }}</strong></label><br>
-
                             <select name='brand_id'>
                                 {% for brand in brands %}
                                 <option value="{{ brand.getId }}">{{ brand.getName }}</option>
                                 {% endfor %}
                             </select><br><br>
-
                             <button type="submit" class="btn btn-success btn-sm">Add Brand to {{ store.getName }}</button>
                         </div>
                     </form>
                 </div>
+
                 <div class="col-md-6">
                     <label><strong>{{store.getName}} carries the following brands:</strong></label>
-
                     {% for store_brand in store_brands %}
                     <h4><strong>{{ store_brand.getName }}</strong></h4>
                     {% endfor %}

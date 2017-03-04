@@ -16,6 +16,7 @@
 
             <form action="/store/{{ store.getId }}" method="post">
                 <input name="_method" type="hidden" value="patch">
+
                 <div class="form-group">
                     <label for="name">Enter a New Name for this Store</label>
                     <input class="form-control" name="name" type="text" placeholder="replace {{ store.getName }} with a new name">
@@ -24,7 +25,6 @@
                     <button class="btn btn-sm btn-success" type="submit">Update Store Name</button>
                 </div>
             </form>
-
 
             <div class="row">
                 <form action="/" method="get" id="go_home">

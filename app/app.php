@@ -68,11 +68,10 @@
 
     $app->post('/brand_page', function() use ($app) {  // ADD A BRAND TO DB, REDIRECTS HOME
 
-
         return $app['twig']->render('brand_page.html.twig');
     });
 
-    $app->get('/store/{id}', function($id) use ($app) { // STORE PAGE, LISTS ASSOCIATED BRANDS
+    $app->get('/store/{id}', function($id) use ($app) { // STORE PAGE, FORM TO ADD AND LISTS ASSOCIATED BRANDS
         $store = Store::find($id);
         $brands = Brand::getAll();
         $store_brands = $store->getBrands();
@@ -80,7 +79,7 @@
         return $app['twig']->render('store_page.html.twig', array('store' => $store, 'brands' => $brands, 'store_brands' => $store_brands));
     });
 
-    $app->get('/brand/{id}', function($id) use ($app) { // BRAND PAGE, ADDS AND LISTS ASSOCIATED STORES
+    $app->get('/brand/{id}', function($id) use ($app) { // BRAND PAGE, FORM TO ADD AND LISTS ASSOCIATED STORES
         $brand = Brand::find($id);
         $stores = Store::getAll();
         $brand_stores = $brand->getStores();
@@ -94,7 +93,6 @@
 
         return $app->redirect("/store/" . $id);
     });
-
 
     $app->get("/store/{id}/edit", function($id) use ($app) { // FORM TO UPDATE STORE NAME
         $store = Store::find($id);

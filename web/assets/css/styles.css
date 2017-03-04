@@ -9,6 +9,10 @@ header {
     margin: 20px;
 }
 
+.btn {
+    border-radius: 5px;
+}
+
 #delete_stores
 , #delete_brands {
     margin-top: -60px;
@@ -23,12 +27,7 @@ header {
     bottom: 0;
 }
 
-.btn {
-    border-radius: 5px;
-}
-
 #delete_store {
     text-align: center;
     margin: 15px;
-
 }

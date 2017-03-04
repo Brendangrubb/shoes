@@ -3,7 +3,7 @@
 
 &nbsp;
 ## Description
-Shoes is an application created to demonstrate my ability to implement a many to many relationship between tables in a database. With this app the user will be able to create relationships between shoe stores and brands of shoes. The user will be able to add brands and shoes to a database and display which brands are carried at a certain shoe store. They will also be able to see which stores carry a certain brand of shoe.
+Shoes is an application created to demonstrate my ability to implement a many to many relationship between tables in a database. With this app the user is able to create relationships between shoe stores and brands of shoes. The user is able to add brands and shoes to a database and display which brands are carried at a certain shoe store. There is a separate page where the user is able to see which stores carry a certain brand of shoe.
 
 
 &nbsp;
@@ -13,20 +13,20 @@ Shoes is an application created to demonstrate my ability to implement a many to
 |Behavior|Input|Output|
 |--------|-----|------|
 | The program will add a shoe store to the database | "Shoe Mill" | _same as input_ |
-| The program will list all shoe stores saved to the database | _no action necessary, stores listed on home page_ | "List of Stores: Shoe Mill // Foot Traffic" |
-| The program will delete all shoe stores saved to the database  |  _user clicks_ "Delete All Shoe Stores" _button_  | "Add Shoe Store Listings to the Database" |
-| Program will find a specific shoe store | _user clicks_  "Shoe Mill" | "Shoe Mill -Add brands carried by this store" |
+| The program will list all shoe stores saved to the database | _no action necessary, stores listed on home page_ | "List of Stores in Database: Shoe Mill // Foot Traffic" |
+| The program will delete all shoe stores saved to the database  |  _user clicks_ "Delete All Stores" _button_  | "Enter a Shoe Store" |
+| Program will find a specific shoe store | _user clicks_  "Shoe Mill" | "Enter a Brand Sold at Shoe Mill" |
 | Program will edit entry of specific shoe store | "Shoe Mill East" | _same as input_ |
-| Program will delete entry of specific shoe store | _user clicks delete shoe store_ | "Store has been deleted" |
+| Program will delete entry of specific shoe store | _user clicks_ "Delete This Store" _button_ | _store is deleted and user is taken to home page_ |
 | Program will list brands carried at a specific shoe store | _user clicks_ "Shoe Mill East" _on home page_ | "Shoe Mill East carries the following shoe brands: -Nike -Puma -Birkenstock -New Balance"
 
 ### Shoe Brand Functionality
 |Behavior|Input|Output|
 |--------|-----|------|
 | The program will add a brand to the database | "Nike" | _same as input_ |
-| The program will list all brands saved to the database | _no action necessary, shoe brands listed on home page_ | "List of Brands: Nike // Puma" |
-| The program will delete all brands saved to the database  |  _user clicks_ "Delete All Brands" _button_  | "Add Brand Listings to the Database" |
-| Program will find a specific brand | _user clicks_  "Nike" | "Nike -Add shoe stores that carry this brand" |
+| The program will list all brands saved to the database | _no action necessary, shoe brands listed on home page_ | "List of Brands in Database: Nike // Puma" |
+| The program will delete all brands saved to the database  |  _user clicks_ "Delete All Brands" _button_  | "Enter a Shoe Brand" |
+| Program will find a specific brand | _user clicks_  "Nike" | "Add a store that sells Pumas" |
 | Program will list shoe stores that carry a specific brand | _user clicks_ "Nike" _on home page_ | "Nike is carried at the following stores: -Shoe Mill -Foot Traffic"
 
 
