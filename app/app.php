@@ -96,18 +96,25 @@
     });
 
 
-    $app->get("/store/{id}/edit", function($id) use ($app) {
+    $app->get("/store/{id}/edit", function($id) use ($app) { // FORM TO UPDATE STORE NAME
         $store = Store::find($id);
 
         return $app['twig']->render('store_edit.html.twig', array('store' => $store));
     });
 
-    $app->patch("/store/{id}", function($id) use ($app) {
+    $app->patch("/store/{id}", function($id) use ($app) { // UPDATE STORE NAME AND REDIRECT TO STORE PAGE
         $new_name = $_POST['name'];
         $store = Store::find($id);
         $store->update($new_name);
 
         return $app->redirect("/store/" . $id);
+    });
+
+    $app->delete("/store/{id}", function($id) use ($app) { // DELETE INDIVIDUAL STORE
+        $store = Store::find($id);
+        $store->delete();
+
+        return $app->redirect('/');
     });
 
     $app->post("/brand/{id}", function($id) use ($app) { // ADD STORE TO BRAND AND REDIRECT TO BRAND PAGE
