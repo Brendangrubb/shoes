@@ -81,7 +81,7 @@
     // MANY TO MANY METHODS
         function addBrand($brand)
         {
-            $GLOBALS['DB']->exec("INSERT INTO stores_brands (store_id, brand_id) VALUES ({$this->getId()}, {$brand->getId()});");
+            $GLOBALS['DB']->exec("INSERT INTO stores_brands (store_id, brand_id) VALUES ({$this->getId()}, {$brand});");
         }
 
         function getBrands()

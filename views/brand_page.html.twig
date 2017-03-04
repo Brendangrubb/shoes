@@ -11,6 +11,22 @@
             <header>
                 <h1>Shoe Stores and Brands!</h1>
             </header>
+            <form method="post" action="/brand/{{ brand.getId }}">
+                <input name="brand_id" type="hidden" value="{{ brand.getId }}">
+
+                <div class="form-group">
+                    <label><strong>Enter Store</strong></label><br>
+
+                    <select name='store_id'>
+                        {% for store in stores %}
+                        <option value="{{ store.getId }}">{{ store.getName }}</option>
+                        {% endfor %}
+                    </select><br><br>
+
+                    <button type="submit" class="btn btn-xs">Add Store to {{ brand.getName }}</button>
+                </div>
+            </form>
+
 
                 <h4>{{brand.getName}} is carried at the following stores:</h4>
 

@@ -63,21 +63,35 @@
 
         return $app['twig']->render('brand_page.html.twig');
     });
-    
-    $app->get('/edit/{id}', function($id) use ($app) {
+
+    $app->get('/store/{id}', function($id) use ($app) { // STORE PAGE, ADDS AND LISTS ASSOCIATED BRANDS
         $store = Store::find($id);
-        $brand = Brand::getAll();
+        $brands = Brand::getAll();
         $store_brands = $store->getBrands();
 
-        return $app['twig']->render('store_page.html.twig', array('store' => $store, 'brand' => $brand, 'store_brands' => $store_brands));
+        return $app['twig']->render('store_page.html.twig', array('store' => $store, 'brands' => $brands, 'store_brands' => $store_brands));
     });
 
-    $app->get('/edit/{id}', function($id) use ($app) {
+    $app->get('/brand/{id}', function($id) use ($app) { // BRAND PAGE, ADDS AND LISTS ASSOCIATED STORES
         $brand = Brand::find($id);
-        $store = Store::getAll();
+        $stores = Store::getAll();
         $brand_stores = $brand->getStores();
 
-        return $app['twig']->render('brand_page.html.twig', array('brand' => $brand, 'store' => $store, 'brand_stores' => $brand_stores));
+        return $app['twig']->render('brand_page.html.twig', array('brand' => $brand, 'stores' => $stores, 'brand_stores' => $brand_stores));
+    });
+
+    $app->post("/store/{id}", function($id) use ($app) {
+        $store = Store::find($id);
+        $store->addBrand($_POST['brand_id']);
+
+        return $app->redirect("/store/" . $id);
+    });
+
+    $app->post("/brand/{id}", function($id) use ($app) {
+        $brand = Brand::find($id);
+        $brand->addStore($_POST['store_id']);
+
+        return $app->redirect("/brand/" . $id);
     });
 
     return $app;
