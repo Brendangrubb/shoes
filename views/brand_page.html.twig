@@ -11,35 +11,41 @@
             <header>
                 <h1>Shoe Stores and Brands!</h1>
             </header>
-            <form method="post" action="/brand/{{ brand.getId }}">
-                <input name="brand_id" type="hidden" value="{{ brand.getId }}">
 
-                <div class="form-group">
-                    <label><strong>Enter Store</strong></label><br>
+            <div class="row">
+                <div class="col-md-6">
+                    <form method="post" action="/brand/{{ brand.getId }}">
+                        <input name="brand_id" type="hidden" value="{{ brand.getId }}">
 
-                    <select name='store_id'>
-                        {% for store in stores %}
-                        <option value="{{ store.getId }}">{{ store.getName }}</option>
-                        {% endfor %}
-                    </select><br><br>
+                        <div class="form-group">
+                            <label><strong>Add a store that sells {{ brand.getName }}</strong></label><br>
 
-                    <button type="submit" class="btn btn-xs">Add Store to {{ brand.getName }}</button>
-                </div>
-            </form>
+                            <select name='store_id'>
+                                {% for store in stores %}
+                                <option value="{{ store.getId }}">{{ store.getName }}</option>
+                                {% endfor %}
+                            </select><br><br>
 
-
-                <h4>{{brand.getName}} is carried at the following stores:</h4>
-
-                {% for brand_store in brand_stores %}
-                    <h4>{{ brand_store.getName }}</h4>
-                {% endfor %}
-
-                <br><br>
-                <div id="go_home">
-                    <form action="/" method="get">
-                        <button class="btn btn-xs" type="submit">Go Home</button>
+                            <button type="submit" class="btn btn-sm btn-success">Add Store to {{ brand.getName }}</button>
+                        </div>
                     </form>
                 </div>
+
+                <div class="col-md-6">
+                    {% if brand_stores is not empty %}
+                        <label><strong>{{brand.getName}} is carried at the following stores:</label></strong>
+                        {% for brand_store in brand_stores %}
+                            <h4><strong>{{ brand_store.getName }}</strong></h4>
+                        {% endfor %}
+                    {% endif%}
+                </div>
+            </div>
+            <div class="row">
+                <form action="/" method="get" id="go_home">
+                    <button class="btn btn-success" type="submit">Go Home</button>
+                </form>
+            </div>
+
         </div>
     </body>
 </html>

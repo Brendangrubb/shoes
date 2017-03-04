@@ -11,12 +11,13 @@ header {
 
 #delete_stores
 , #delete_brands {
-    margin-top: -53px;
+    margin-top: -60px;
     float: right;
     }
 
-#delete_all {
-    margin-left: 480px;
+#delete_all
+, #go_home {
+    margin-left: 550px;
     margin-bottom: 10px;
     position: fixed;
     bottom: 0;
@@ -24,4 +25,10 @@ header {
 
 .btn {
     border-radius: 5px;
+}
+
+#delete_store {
+    text-align: center;
+    margin: 15px;
+
 }
