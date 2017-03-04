@@ -9,7 +9,8 @@
         <div class="container">
 
             <header>
-                <h1>Shoe Stores and Brands!</h1>
+                <h1>Shoe Store and Brand Tracker</h1>
+                <h3>Keep a record of all your favorite shoe stores and brands and track their associations!</h3>
             </header>
 
             <div class="row">
@@ -52,9 +53,8 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <label><strong>List of Stores in Database</strong></label>
-
                     {% if stores is not empty %}
+                    <label><strong>List of Stores in Database</strong></label>
                     {% for store in stores %}
                     <ul>
                         <li><a href="/store/{{ store.getId }}">{{ store.getName }}</a></li>
@@ -64,9 +64,8 @@
                 </div>
 
                 <div class="col-md-6">
-                    <label><strong>List of Brands in Database</strong></label>
-
                     {% if brands is not empty %}
+                    <label><strong>List of Brands in Database</strong></label>
                     {% for brand in brands %}
                     <ul>
                         <li><a href="/brand/{{ brand.getId }}">{{ brand.getName }}</a></li>
@@ -74,6 +73,13 @@
                     {% endfor %}
                     {% endif %}
                 </div>
+            </div>
+
+            <div class="row">
+                <form action='/' method='post' id='delete_all'>
+                    <input name="_method" type="hidden" value="delete">
+                    <button type="submit" class="btn btn-danger">Delete All Stores and Brands</button>
+                </form>
             </div>
 
         </div>

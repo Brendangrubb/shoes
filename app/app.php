@@ -53,6 +53,14 @@
         return $app->redirect('/');
     });
 
+    $app->delete('/', function() use ($app) { // DELETE ALL STORES, BRANDS AND ASSOCIATIONS
+        Store::deleteAll();
+        Brand::deleteAll();
+        $GLOBALS['DB']->exec("DELETE FROM stores_brands;");
+
+        return $app->redirect('/');
+    });
+
     $app->post('/store_page', function() use ($app) {  // ADD A STORE TO DB, REDIRECTS HOME
 
         return $app['twig']->render('store_page.html.twig');
@@ -64,7 +72,7 @@
         return $app['twig']->render('brand_page.html.twig');
     });
 
-    $app->get('/store/{id}', function($id) use ($app) { // STORE PAGE, ADDS AND LISTS ASSOCIATED BRANDS
+    $app->get('/store/{id}', function($id) use ($app) { // STORE PAGE, LISTS ASSOCIATED BRANDS
         $store = Store::find($id);
         $brands = Brand::getAll();
         $store_brands = $store->getBrands();
@@ -80,14 +88,14 @@
         return $app['twig']->render('brand_page.html.twig', array('brand' => $brand, 'stores' => $stores, 'brand_stores' => $brand_stores));
     });
 
-    $app->post("/store/{id}", function($id) use ($app) {
+    $app->post("/store/{id}", function($id) use ($app) { // ADD BRAND TO STORE AND REDIRECT TO STORE PAGE
         $store = Store::find($id);
         $store->addBrand($_POST['brand_id']);
 
         return $app->redirect("/store/" . $id);
     });
 
-    $app->post("/brand/{id}", function($id) use ($app) {
+    $app->post("/brand/{id}", function($id) use ($app) { // ADD STORE TO BRAND AND REDIRECT TO BRAND PAGE
         $brand = Brand::find($id);
         $brand->addStore($_POST['store_id']);
 

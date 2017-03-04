@@ -1,5 +1,6 @@
 body {
     background-color: #D3D3D3;
+    font-size: 20px;
 }
 
 header {
@@ -13,3 +14,14 @@ header {
     margin-top: -53px;
     float: right;
     }
+
+#delete_all {
+    margin-left: 480px;
+    margin-bottom: 10px;
+    position: fixed;
+    bottom: 0;
+}
+
+.btn {
+    border-radius: 5px;
+}
