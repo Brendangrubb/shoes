@@ -69,7 +69,7 @@ Shoes is an application created to demonstrate my ability to implement a many to
     * Click start servers.
 * Type **_localhost:8888/phpmyadmin_** into your web browser
     * Click the _Import_ tab on the nav bar
-    * Click _Choose File_ and navigate to the unzipped **_shoes.sql_**
+    * Click _Choose File_ and navigate to the unzipped **_localhost.sql_**
     * click _GO_
 * Open Terminal, navigate to **_shoes-master_** project folder, type **_composer install_** and hit enter
 * Navigate Terminal to the **_shoes-master_/web_** folder and set up a server by typing **_php -S localhost:8000_**
